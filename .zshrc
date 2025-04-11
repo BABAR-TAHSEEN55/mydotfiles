@@ -26,7 +26,6 @@ alias nf='neofetch'
 alias pn='pnpm start'
 alias np='npm run dev'
 alias bat='batcat'
-alias cb='~/tech/BashScripting/Project/cb.sh'
 
 
 
@@ -91,3 +90,8 @@ export PATH=/home/lelouch/bin:/usr/local/bin:/home/lelouch/.cargo/bin:/usr/local
 
 # bindkey -s '^K' 'sesh connect "$(sesh list -i | gum filter --limit 1 --no-sort --fuzzy --placeholder "Pick a sesh" --height 15 --prompt="⚡")"\n'
 
+#TODO : instead do this create tmux as soon as terminal is opened but based on Zoxide highest visited node
+# function tmux_open(){
+#   tmux
+# }
+# tmux_open
