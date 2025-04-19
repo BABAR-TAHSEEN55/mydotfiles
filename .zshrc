@@ -95,3 +95,9 @@ export PATH=/home/lelouch/bin:/usr/local/bin:/home/lelouch/.cargo/bin:/usr/local
 #   tmux
 # }
 # tmux_open
+
+
+Reminder(){
+  echo "Fill your water bottle & sit along with it"
+}
+Reminder
