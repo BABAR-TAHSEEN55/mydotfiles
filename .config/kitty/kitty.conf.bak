@@ -20,6 +20,6 @@ allow_remote_control yes
 
 
 # BEGIN_KITTY_THEME
-# IR Black
+# Black Metal
 include current-theme.conf
 # END_KITTY_THEME
