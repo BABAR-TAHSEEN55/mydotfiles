@@ -62,7 +62,7 @@ return {
 						},
 					},
 					telescope = {
-						reverse = true, -- set to false for search bar to be on top
+						reverse = false, -- set to false for search bar to be on top
 						layout = {
 							box = "horizontal",
 							backdrop = false,
@@ -109,33 +109,33 @@ return {
 					},
 				},
 			},
-			image = {
-				enabled = true,
-				doc = {
-					float = false,
-					inline = true, -- if you want show image on cursor hover max_width = 50,
-					max_height = 30,
-					wo = {
-						wrap = true,
-					},
-				},
-				convert = {
-					notify = true,
-					command = "magick",
-				},
-				img_dirs = {
-					"img",
-					"images",
-					"assets",
-					"static",
-					"public",
-					"media",
-					"attachments",
-					"Archives/All-Vault-Images/",
-					"~/Library",
-					"~/Downloads",
-				},
-			},
+			-- image = {
+			-- 	enabled = true,
+			-- 	doc = {
+			-- 		float = false,
+			-- 		inline = true, -- if you want show image on cursor hover max_width = 50,
+			-- 		max_height = 30,
+			-- 		wo = {
+			-- 			wrap = true,
+			-- 		},
+			-- 	},
+			-- 	convert = {
+			-- 		notify = true,
+			-- 		command = "magick",
+			-- 	},
+			-- 	img_dirs = {
+			-- 		"img",
+			-- 		"images",
+			-- 		"assets",
+			-- 		"static",
+			-- 		"public",
+			-- 		"media",
+			-- 		"attachments",
+			-- 		"Archives/All-Vault-Images/",
+			-- 		"~/Library",
+			-- 		"~/Downloads",
+			-- 	},
+			-- },
 			dashboard = {
 				preset = {
 					header = [[
@@ -151,7 +151,7 @@ return {
 			-- NOTE: Keymaps
 			keys = {
 				{
-					"<leader>;c",
+					"<leader>h",
 					function()
 						require("snacks").lazygit()
 					end,

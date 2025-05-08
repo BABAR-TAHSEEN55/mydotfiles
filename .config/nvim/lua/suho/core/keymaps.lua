@@ -93,6 +93,6 @@ end, { desc = "Toggle LSP diagnostics" })
 
 
 -- Save file and quit
-vim.keymap.set("n", "<Leader>w", ":update<Return>", opts)
-vim.keymap.set("n", "<Leader>q", ":quit<Return>", opts)
-vim.keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
+-- vim.keymap.set("n", "<Leader>w", ":update<Return>", opts)
+-- vim.keymap.set("n", "<Leader>q", ":quit<Return>", opts)
+-- vim.keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
