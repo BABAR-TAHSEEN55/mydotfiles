@@ -27,6 +27,7 @@ return {
             return require("lspconfig.util").root_pattern(".git")(...)
           end,
         },
+
         tsserver = {
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
@@ -274,4 +275,15 @@ return {
     end,
     main = "lazyvim.util.cmp",
   },
+  -- {
+  --   "pmizio/typescript-tools.nvim",
+  --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  --   ft = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+  --   opts = {
+  --     settings = {
+  --       tsserver_plugins = {},
+  --       complete_function_calls = true,
+  --     },
+  --   },
+  -- },
 }

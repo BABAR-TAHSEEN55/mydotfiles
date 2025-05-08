@@ -1,0 +1,7 @@
+--NOTE : Going back in Time
+return {
+    "mbbill/undotree",
+    config = function()
+        vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+    end,
+}
