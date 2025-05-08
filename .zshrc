@@ -23,9 +23,16 @@ alias to='tmux a -t'
 alias tkk='tmux kill-session -t'
 alias btop='btop --utf-force'
 alias nf='neofetch'
-alias pn='pnpm start'
-alias np='npm run dev'
+# alias pn='pnpm start'
+alias pn='pnpm'
+alias np='pnpm run dev'
 alias bat='batcat'
+alias fn='fdfind'
+# alias xapi="~/tech/BashScripting/xapi.sh"
+# alias l='http://localhost:'
+
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 
 
 
@@ -101,3 +108,20 @@ Reminder(){
   echo "Fill your water bottle & sit along with it"
 }
 Reminder
+#Node Version Package Manager
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pnpm
+export PNPM_HOME="/home/lelouch/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+. "$HOME/.local/bin/env"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
