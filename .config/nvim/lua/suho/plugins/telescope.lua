@@ -45,7 +45,7 @@ return {
 					},
 				},
 			},
-			nsions = {
+			extensions = {
 				themes = {
 					enable_previewer = true,
 					enable_live_preview = true,
@@ -59,7 +59,7 @@ return {
 
 		-- Keymaps
 		-- TODO: Change the Keybinds
-		vim.keymap.set("n", "<leader>pr", "<cmd>Telescope oldfiles<CR>", { desc = "Fuzzy find recent files" })
+		vim.keymap.set("n", "<leader>of", "<cmd>Telescope oldfiles<CR>", { desc = "Fuzzy find recent files" })
 		vim.keymap.set("n", "<leader>pWs", function()
 			local word = vim.fn.expand("<cWORD>")
 			builtin.grep_string({ search = word })
