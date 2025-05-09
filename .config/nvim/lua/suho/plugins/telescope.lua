@@ -27,15 +27,25 @@ return {
 
 		telescope.setup({
 			defaults = {
-				path_display = { "smart" },
+				wrap_results = true,
+				layout_strategy = "horizontal",
+				layout_config = { prompt_position = "top" },
+				sorting_strategy = "ascending",
+				winblend = 0,
 				mappings = {
-					i = {
-						["<C-k>"] = actions.move_selection_previous,
-						["<C-j>"] = actions.move_selection_next,
+					n = {},
+				},
+			},
+			pickers = {
+				diagnostics = {
+					theme = "ivy",
+					initial_mode = "normal",
+					layout_config = {
+						preview_cutoff = 9999,
 					},
 				},
 			},
-			extensions = {
+			nsions = {
 				themes = {
 					enable_previewer = true,
 					enable_live_preview = true,

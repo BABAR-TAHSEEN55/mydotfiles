@@ -2,9 +2,10 @@ return {
 	-- Quickly Jump through the todo tags
 	"folke/todo-comments.nvim",
 	event = { "BufReadPre", "BufNewFile" },
-	dependencies = { "nvim-lua/plenary.nvim"},
+	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		local todo_comments = require("todo-comments")
+
 
 		todo_comments.setup({
 			keywords = {
@@ -22,8 +23,7 @@ return {
 				TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
 			},
 		})
---TODO: : Make this Work
---TODO: : Make this Work
+
 		-- keymaps
 		vim.keymap.set("n", "]t", function()
 			todo_comments.jump_next()
@@ -32,6 +32,5 @@ return {
 		vim.keymap.set("n", "[t", function()
 			todo_comments.jump_prev()
 		end, { desc = "Previous todo comment" })
-        -- vim.keymap.set("n", "<leader>pt", "<cmd>TodoTelescope<cr>", { desc = "Search TODOs with Telescope" })
 	end,
 }
