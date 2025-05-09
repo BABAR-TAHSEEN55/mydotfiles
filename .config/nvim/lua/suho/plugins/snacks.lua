@@ -96,7 +96,7 @@ return {
 							width = 0,
 							height = 0.4,
 							position = "bottom",
-							border = "top",
+							border = "bottom",
 							title = " {title} {live} {flags}",
 							title_pos = "left",
 							{ win = "input", height = 1, border = "bottom" },
@@ -143,7 +143,7 @@ return {
 
 			-- Snacks Picker
 			{
-				"<leader>pf",
+				"<leader>sf",
 				function()
 					require("snacks").picker.files()
 				end,
