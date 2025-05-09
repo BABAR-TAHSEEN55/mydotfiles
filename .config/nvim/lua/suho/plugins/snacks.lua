@@ -62,9 +62,9 @@ return {
 						},
 					},
 					telescope = {
-						reverse = false, -- set to false for search bar to be on top
+						reverse = true, -- set to false for search bar to be on top
 						layout = {
-							box = "horizontal",
+							box = "vertical",
 							backdrop = false,
 							width = 0.8,
 							height = 0.9,
@@ -101,7 +101,7 @@ return {
 							title_pos = "left",
 							{ win = "input", height = 1, border = "bottom" },
 							{
-								box = "horizontal",
+								box = "vertical",
 								{ win = "list", border = "none" },
 								{ win = "preview", title = "{preview}", width = 0.5, border = "left" },
 							},
@@ -109,149 +109,123 @@ return {
 					},
 				},
 			},
-			-- image = {
-			-- 	enabled = true,
-			-- 	doc = {
-			-- 		float = false,
-			-- 		inline = true, -- if you want show image on cursor hover max_width = 50,
-			-- 		max_height = 30,
-			-- 		wo = {
-			-- 			wrap = true,
-			-- 		},
-			-- 	},
-			-- 	convert = {
-			-- 		notify = true,
-			-- 		command = "magick",
-			-- 	},
-			-- 	img_dirs = {
-			-- 		"img",
-			-- 		"images",
-			-- 		"assets",
-			-- 		"static",
-			-- 		"public",
-			-- 		"media",
-			-- 		"attachments",
-			-- 		"Archives/All-Vault-Images/",
-			-- 		"~/Library",
-			-- 		"~/Downloads",
-			-- 	},
-			-- },
-			dashboard = {
-				preset = {
-					header = [[
-                     ██╗ ██████╗ ██╗   ██╗██████╗  ██████╗ ██╗   ██╗
-                     ██║██╔═══██╗╚██╗ ██╔╝██╔══██╗██╔═══██╗╚██╗ ██╔╝
-                     ██║██║   ██║ ╚████╔╝ ██████╔╝██║   ██║ ╚████╔╝ 
-                ██   ██║██║   ██║  ╚██╔╝  ██╔══██╗██║   ██║  ╚██╔╝  
-                ╚█████╔╝╚██████╔╝   ██║   ██████╔╝╚██████╔╝   ██║   
-                 ╚════╝  ╚═════╝    ╚═╝   ╚═════╝  ╚═════╝    ╚═╝   
-]],
-				},
+		},
+		-- NOTE: Keymaps
+		keys = {
+			{
+				"<leader>lg",
+				function()
+					require("snacks").lazygit()
+				end,
+				desc = "Lazygit",
 			},
-			-- NOTE: Keymaps
-			keys = {
-				{
-					"<leader>h",
-					function()
-						require("snacks").lazygit()
-					end,
-					desc = "Lazygit",
-				},
-				{
-					"<leader>gl",
-					function()
-						require("snacks").lazygit.log()
-					end,
-					desc = "Lazygit Logs",
-				},
-				{
-					"<leader>rN",
-					function()
-						require("snacks").rename.rename_file()
-					end,
-					desc = "Fast Rename Current File",
-				},
-				{
-					"<leader>dB",
-					function()
-						require("snacks").bufdelete()
-					end,
-					desc = "Delete or Close Buffer  (Confirm)",
-				},
+			{
+				"<leader>gl",
+				function()
+					require("snacks").lazygit.log()
+				end,
+				desc = "Lazygit Logs",
+			},
+			{
+				"<leader>rN",
+				function()
+					require("snacks").rename.rename_file()
+				end,
+				desc = "Fast Rename Current File",
+			},
+			{
+				"<leader>dB",
+				function()
+					require("snacks").bufdelete()
+				end,
+				desc = "Delete or Close Buffer  (Confirm)",
+			},
 
-				-- Snacks Picker
-				{
-					"<leader>pf",
-					function()
-						require("snacks").picker.files()
-					end,
-					desc = "Find Files (Snacks Picker)",
-				},
-				{
-					"<leader>pc",
-					function()
-						require("snacks").picker.files({ cwd = vim.fn.stdpath("config") })
-					end,
-					desc = "Find Config File",
-				},
-				{
-					"<leader>ps",
-					function()
-						require("snacks").picker.grep()
-					end,
-					desc = "Grep word",
-				},
-				{
-					"<leader>pws",
-					function()
-						require("snacks").picker.grep_word()
-					end,
-					desc = "Search Visual selection or Word",
-					mode = { "n", "x" },
-				},
-				{
-					"<leader>pk",
-					function()
-						require("snacks").picker.keymaps({ layout = "ivy" })
-					end,
-					desc = "Search Keymaps (Snacks Picker)",
-				},
+			-- Snacks Picker
+			{
+				"<leader>pf",
+				function()
+					require("snacks").picker.files()
+				end,
+				desc = "Find Files (Snacks Picker)",
+			},
+			{
+				"<leader>pc",
+				function()
+					require("snacks").picker.files({ cwd = vim.fn.stdpath("config") })
+				end,
+				desc = "Find Config File",
+			},
+			{
+				"<leader>ps",
+				function()
+					require("snacks").picker.grep()
+				end,
+				desc = "Grep word",
+			},
+			{
+				"<leader>pws",
+				function()
+					require("snacks").picker.grep_word()
+				end,
+				desc = "Search Visual selection or Word",
+				mode = { "n", "x" },
+			},
+			{
+				"<leader>pk",
+				function()
+					require("snacks").picker.keymaps({ layout = "ivy" })
+				end,
+				desc = "Search Keymaps (Snacks Picker)",
+			},
 
-				-- Git Stuff
-				{
-					"<leader>gbr",
-					function()
-						require("snacks").picker.git_branches({ layout = "select" })
-					end,
-					desc = "Pick and Switch Git Branches",
-				},
+			-- Git Stuff
+			{
+				"<leader>gbr",
+				function()
+					require("snacks").picker.git_branches({ layout = "select" })
+				end,
+				desc = "Pick and Switch Git Branches",
+			},
 
-				-- Other Utils
-				{
-					"<leader>th",
-					function()
-						require("snacks").picker.colorschemes({ layout = "ivy" })
-					end,
-					desc = "Pick Color Schemes",
-				},
-				{
-					"<leader>vh",
-					function()
-						require("snacks").picker.help()
-					end,
-					desc = "Help Pages",
-				},
+			-- Other Utils
+			{
+				"<leader>th",
+				function()
+					require("snacks").picker.colorschemes({ layout = "ivy" })
+				end,
+				desc = "Pick Color Schemes",
+			},
+			{
+				"<leader>vh",
+				function()
+					require("snacks").picker.help()
+				end,
+				desc = "Help Pages",
 			},
 		},
-		-- NOTE: todo comments w/ snacks
+
 		{
 			"folke/todo-comments.nvim",
 			event = { "BufReadPre", "BufNewFile" },
 			optional = true,
 			keys = {
-				{ "<leader>pT", "<cmd>TodoTelescope<cr>", desc = "Search TODOs with Telescope" },
-				{ "<leader>pt", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
+				{
+					"<leader>pt",
+					function()
+						require("snacks").picker.todo_comments()
+					end,
+					desc = "Todo",
+				},
+				{
+					"<leader>pT",
+					function()
+						require("snacks").picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
+					end,
+					desc = "Todo/Fix/Fixme",
+				},
 			},
 		},
 	},
+	-- NOTE: todo comments w/ snacks
 }

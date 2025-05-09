@@ -38,10 +38,10 @@ return {
 		-- end
 
 		--Harpoon Nav Interface
-		vim.keymap.set("n", "<leader>a", function()
+		vim.keymap.set("n", "<leader>s", function()
 			harpoon:list():add()
 		end, { desc = "Harpoon add file" })
-		vim.keymap.set("n", "<C-e>", function()
+		vim.keymap.set("n", "<S-e>", function()
 			harpoon.ui:toggle_quick_menu(harpoon:list())
 		end)
 

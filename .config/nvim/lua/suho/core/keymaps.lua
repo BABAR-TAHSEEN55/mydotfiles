@@ -28,8 +28,8 @@ vim.keymap.set("n", "<leader>Y", [["+Y]], opts)
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- ctrl c as escape cuz Im lazy to reach up to the esc key
-vim.keymap.set("i", "<C-c>", "<Esc>")
-vim.keymap.set("n", "<C-c>", ":nohl<CR>", { desc = "Clear search hl", silent = true })
+-- vim.keymap.set("i", "<C-c>", "<Esc>")
+-- vim.keymap.set("n", "<C-c>", ":nohl<CR>", { desc = "Clear search hl", silent = true })
 -- format without prettier using the built in
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
@@ -43,8 +43,8 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "x", '"_x', opts)
 
 -- Replace the word cursor is on globally
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-    { desc = "Replace word cursor is on globally" })
+-- vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+--     { desc = "Replace word cursor is on globally" })
 
 -- Executes shell command from in here making file executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "makes file executable" })
@@ -93,6 +93,6 @@ end, { desc = "Toggle LSP diagnostics" })
 
 
 -- Save file and quit
--- vim.keymap.set("n", "<Leader>w", ":update<Return>", opts)
--- vim.keymap.set("n", "<Leader>q", ":quit<Return>", opts)
--- vim.keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
+vim.keymap.set("n", "<Leader>w", ":update<Return>", opts)
+vim.keymap.set("n", "<Leader>q", ":quit<Return>", opts)
+vim.keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
