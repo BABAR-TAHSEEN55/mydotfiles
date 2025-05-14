@@ -3,7 +3,7 @@ return {
 	{
 		"folke/snacks.nvim",
 		priority = 1000,
-		lazy = true,
+		lazy = false,
 		-- NOTE: Options
 		opts = {
 			-- Styling for each Item of Snacks
@@ -64,7 +64,7 @@ return {
 					telescope = {
 						reverse = true, -- set to false for search bar to be on top
 						layout = {
-							box = "vertical",
+							box = "horizontal",
 							backdrop = false,
 							width = 0.8,
 							height = 0.9,
@@ -204,28 +204,28 @@ return {
 				desc = "Help Pages",
 			},
 		},
+	},
+	-- NOTE: todo comments w/ snacks
 
-		{
-			"folke/todo-comments.nvim",
-			event = { "BufReadPre", "BufNewFile" },
-			optional = true,
-			keys = {
-				{
-					"<leader>pt",
-					function()
-						require("snacks").picker.todo_comments()
-					end,
-					desc = "Todo",
-				},
-				{
-					"<leader>pT",
-					function()
-						require("snacks").picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
-					end,
-					desc = "Todo/Fix/Fixme",
-				},
+	{
+		"folke/todo-comments.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		optional = true,
+		keys = {
+			{
+				"<leader>pt",
+				function()
+					require("snacks").picker.todo_comments()
+				end,
+				desc = "Todo",
+			},
+			{
+				"<leader>pT",
+				function()
+					require("snacks").picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
+				end,
+				desc = "Todo/Fix/Fixme",
 			},
 		},
 	},
-	-- NOTE: todo comments w/ snacks
 }
