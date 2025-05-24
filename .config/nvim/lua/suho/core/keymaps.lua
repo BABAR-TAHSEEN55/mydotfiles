@@ -97,3 +97,7 @@ vim.keymap.set("n", "<Leader>w", ":update<Return>", opts)
 vim.keymap.set("n", "<Leader>q", ":quit<Return>", opts)
 vim.keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
 vim.opt.fillchars:append({ eob = " " })
+
+-- vim.keymap.set("n", "<leader>tt", ":lua require('toggle-checkbox').toggle()<CR>")
+
+vim.keymap.set("n", "<leader>tt", ":lua require('toggle-checkbox').toggle()<CR>")
