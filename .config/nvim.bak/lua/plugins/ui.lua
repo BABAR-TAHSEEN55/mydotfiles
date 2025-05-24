@@ -66,13 +66,13 @@ return {
       background_colour = "#1E1E1E", -- Change this to any color you prefer
     },
   },
-  {
-    "snacks.nvim",
-    opts = {
-      scroll = { enabled = false },
-    },
-    keys = {},
-  },
+  -- {
+  --   "snacks.nvim",
+  --   opts = {
+  --     scroll = { enabled = false },
+  --   },
+  --   keys = {},
+  -- },
 
   {
     "b0o/incline.nvim",
