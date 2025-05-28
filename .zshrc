@@ -129,3 +129,5 @@ esac
 export PATH="/usr/local/bin:$PATH"
 
 export EDITOR=nvim
+export VISUAL=nvim
+
