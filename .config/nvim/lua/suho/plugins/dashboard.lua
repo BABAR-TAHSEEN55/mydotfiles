@@ -14,8 +14,8 @@ return {
 ╚█████╔╝╚██████╔╝   ██║   ██████╔╝╚██████╔╝   ██║   
  ╚════╝  ╚═════╝    ╚═╝   ╚═════╝  ╚═════╝    ╚═╝   
 
-      "If You Don't Take Risks, You Can't Create a Future.",
-      "                                  - Monkey D. Luffy",
+      If You Don't Take Risks, You Can't Create a Future.,
+                                        - Monkey D. Luffy,
 
    ]],
 				},
