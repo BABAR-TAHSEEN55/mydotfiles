@@ -28,6 +28,8 @@ alias pn='pnpm'
 alias np='pnpm run dev'
 alias bat='batcat'
 alias fn='fdfind'
+alias gs='gh copilot suggest'
+alias ge='gh copilot explain'
 # alias xapi="~/tech/BashScripting/xapi.sh"
 # alias l='http://localhost:'
 
@@ -130,4 +132,5 @@ export PATH="/usr/local/bin:$PATH"
 
 export EDITOR=nvim
 export VISUAL=nvim
+
 
