@@ -24,13 +24,15 @@ alias tkk='tmux kill-session -t'
 alias btop='btop --utf-force'
 alias nf='neofetch'
 # alias pn='pnpm start'
-alias pn='pnpm'
-alias np='pnpm run dev'
+# alias pn='pnpm'
+alias pn='pnpm run dev'
 alias bat='batcat'
 alias fn='fdfind'
 alias gs='gh copilot suggest'
 alias ge='gh copilot explain'
 alias mux='tmuxinator'
+alias xx='xdg-open .'
+
 # alias xapi="~/tech/BashScripting/xapi.sh"
 # alias l='http://localhost:'
 
@@ -107,10 +109,10 @@ export PATH=/home/lelouch/bin:/usr/local/bin:/home/lelouch/.cargo/bin:/usr/local
 # tmux_open
 
 
-Reminder(){
-  echo "Fill your water bottle & sit along with it"
-}
-Reminder
+# Reminder(){
+#   echo "Drink water"
+# }
+# Reminder
 #Node Version Package Manager
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -134,6 +136,8 @@ export PATH="/usr/local/bin:$PATH"
 export EDITOR=nvim
 export VISUAL=nvim
 
-
+export PATH="~/go/bin:$PATH"
 
 bindkey '^R' history-incremental-search-backward
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
