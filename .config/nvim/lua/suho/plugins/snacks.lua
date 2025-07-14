@@ -62,7 +62,7 @@ return {
 						},
 					},
 					telescope = {
-						reverse = true, -- set to false for search bar to be on top
+						reverse = false, -- set to false for search bar to be on top
 						layout = {
 							box = "horizontal",
 							backdrop = false,
@@ -71,7 +71,6 @@ return {
 							border = "none",
 							{
 								box = "vertical",
-								{ win = "list", title = " Results ", title_pos = "center", border = "rounded" },
 								{
 									win = "input",
 									height = 1,
@@ -79,6 +78,7 @@ return {
 									title = "{title} {live} {flags}",
 									title_pos = "center",
 								},
+								{ win = "list", title = " Results ", title_pos = "center", border = "rounded" },
 							},
 							{
 								win = "preview",
@@ -112,13 +112,6 @@ return {
 		},
 		-- NOTE: Keymaps
 		keys = {
-			{
-				"<leader>lg",
-				function()
-					require("snacks").lazygit()
-				end,
-				desc = "Lazygit",
-			},
 			{
 				"<leader>gl",
 				function()

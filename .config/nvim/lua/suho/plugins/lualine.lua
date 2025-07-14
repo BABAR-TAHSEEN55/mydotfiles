@@ -6,9 +6,9 @@ return {
 		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 
 		local colors = {
-            color0 = "#092236",
-            color1 = "#ff5874",
-            color2 = "#c3ccdc",
+			color0 = "#092236",
+			color1 = "#ff5874",
+			color2 = "#c3ccdc",
 			color3 = "#1c1e26",
 			color6 = "#a1aab8",
 			color7 = "#828697",
@@ -39,46 +39,45 @@ return {
 			},
 		}
 
-        local mode = {
-            'mode',
-            fmt = function(str)
-                -- return ' ' 
-                -- displays only the first character of the mode
-                return ' ' .. str
-            end,
-        }
+		local mode = {
+			"mode",
+			fmt = function(str)
+				-- return ' '
+				-- displays only the first character of the mode
+				return " " .. str
+			end,
+		}
 
-        local diff = {
-            'diff',
-            colored = true,
-            symbols = { added = ' ', modified = ' ', removed = ' ' }, -- changes diff symbols
-            -- cond = hide_in_width,
-        }
+		local diff = {
+			"diff",
+			colored = true,
+			symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+			-- cond = hide_in_width,
+		}
 
-        local filename = {
-            'filename',
-            file_status = true,
-            path = 0,
-        }
+		local filename = {
+			"filename",
+			file_status = true,
+			path = 0,
+		}
 
-        local branch = {'branch', icon = {'', color={fg='#A6D4DE'}}, '|'}
-
+		local branch = { "branch", icon = { "", color = { fg = "#A6D4DE" } }, "|" }
 
 		lualine.setup({
-            icons_enabled = true,
+			icons_enabled = true,
 			options = {
 				theme = my_lualine_theme,
 				component_separators = { left = "|", right = "|" },
 				section_separators = { left = "|", right = "" },
 			},
 			sections = {
-                lualine_a = { mode },
-                lualine_b = { branch },
-                lualine_c = { diff, filename },
+				lualine_a = { mode },
+				lualine_b = { branch },
+				lualine_c = { diff, filename },
 				lualine_x = {
 					{
-                        -- require("noice").api.statusline.mode.get,
-                        -- cond = require("noice").api.statusline.mode.has,
+						-- require("noice").api.statusline.mode.get,
+						-- cond = require("noice").api.statusline.mode.has,
 						lazy_status.updates,
 						cond = lazy_status.has_updates,
 						color = { fg = "#ff9e64" },
@@ -91,3 +90,23 @@ return {
 		})
 	end,
 }
+
+-- SOlarzied Osaka Color
+-- local colors = {
+-- 	base03 = "#002b36",
+-- 	base02 = "#073642",
+-- 	base01 = "#586e75",
+-- 	base00 = "#657b83",
+-- 	base0 = "#839496",
+-- 	base1 = "#93a1a1",
+-- 	base2 = "#eee8d5",
+-- 	base3 = "#fdf6e3",
+-- 	yellow = "#b58900",
+-- 	orange = "#cb4b16",
+-- 	red = "#dc322f",
+-- 	magenta = "#d33682",
+-- 	violet = "#6c71c4",
+-- 	blue = "#268bd2",
+-- 	cyan = "#2aa198",
+-- 	green = "#859900",
+-- }

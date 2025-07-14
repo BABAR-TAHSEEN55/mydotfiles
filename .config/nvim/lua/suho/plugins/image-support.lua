@@ -16,7 +16,7 @@ return {
     --         prompt_for_file_name = true,
     --         show_dir_path_in_prompt = true,
     --
-    --         use_absolute_path = false,
+   --         use_absolute_path = false,
     --         relative_to_current_file = true,
     --
     --         embed_image_as_base64 = false,

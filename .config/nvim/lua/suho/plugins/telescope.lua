@@ -16,7 +16,6 @@ return {
 			end,
 			desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
 		},
-
 	},
 	config = function()
 		local telescope = require("telescope")

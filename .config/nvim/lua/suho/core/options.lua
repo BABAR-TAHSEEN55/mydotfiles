@@ -6,6 +6,7 @@ vim.cmd("let g:netrw_banner = 0 ")
 vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.colorcolumn = "80"
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -33,9 +34,9 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
 -- Enable folding ( setup in nvim-ufo )
-vim.o.foldenable = true     -- Enable folding by default
+vim.o.foldenable = true -- Enable folding by default
 vim.o.foldmethod = "manual" -- Default fold method (change as needed)
-vim.o.foldlevel = 99        -- Open most folds by default
+vim.o.foldlevel = 99 -- Open most folds by default
 vim.o.foldcolumn = "0"
 
 -- backspace

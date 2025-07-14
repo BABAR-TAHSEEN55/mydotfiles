@@ -101,3 +101,4 @@ vim.opt.fillchars:append({ eob = " " })
 -- vim.keymap.set("n", "<leader>tt", ":lua require('toggle-checkbox').toggle()<CR>")
 
 vim.keymap.set("n", "<leader>tt", ":lua require('toggle-checkbox').toggle()<CR>")
+
