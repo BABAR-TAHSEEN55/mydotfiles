@@ -3,47 +3,50 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local lualine = require("lualine")
-		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+		local lazy_status = require("lazy.status") -- for lazy.nvim updates
 
+		-- Gruvbox Dark Hard palette
 		local colors = {
-			color0 = "#092236",
-			color1 = "#ff5874",
-			color2 = "#c3ccdc",
-			color3 = "#1c1e26",
-			color6 = "#a1aab8",
-			color7 = "#828697",
-			color8 = "#ae81ff",
+			bg = "#1d2021", -- background (hard)
+			fg = "#ebdbb2", -- foreground
+			red = "#fb4934",
+			green = "#b8bb26",
+			yellow = "#fabd2f",
+			blue = "#83a598",
+			purple = "#d3869b",
+			aqua = "#8ec07c",
+			gray = "#928374",
+			bg_alt = "#3c3836",
 		}
-		local my_lualine_theme = {
-			replace = {
-				a = { fg = colors.color0, bg = colors.color1, gui = "bold" },
-				b = { fg = colors.color2, bg = colors.color3 },
-			},
-			inactive = {
-				a = { fg = colors.color6, bg = colors.color3, gui = "bold" },
-				b = { fg = colors.color6, bg = colors.color3 },
-				c = { fg = colors.color6, bg = colors.color3 },
-			},
+
+		local gruvbox_theme = {
 			normal = {
-				a = { fg = colors.color0, bg = colors.color7, gui = "bold" },
-				b = { fg = colors.color2, bg = colors.color3 },
-				c = { fg = colors.color2, bg = colors.color3 },
-			},
-			visual = {
-				a = { fg = colors.color0, bg = colors.color8, gui = "bold" },
-				b = { fg = colors.color2, bg = colors.color3 },
+				a = { fg = colors.bg, bg = colors.blue, gui = "bold" },
+				b = { fg = colors.fg, bg = colors.bg_alt },
+				c = { fg = colors.fg, bg = colors.bg_alt },
 			},
 			insert = {
-				a = { fg = colors.color0, bg = colors.color2, gui = "bold" },
-				b = { fg = colors.color2, bg = colors.color3 },
+				a = { fg = colors.bg, bg = colors.green, gui = "bold" },
+				b = { fg = colors.fg, bg = colors.bg_alt },
+			},
+			visual = {
+				a = { fg = colors.bg, bg = colors.purple, gui = "bold" },
+				b = { fg = colors.fg, bg = colors.bg_alt },
+			},
+			replace = {
+				a = { fg = colors.bg, bg = colors.red, gui = "bold" },
+				b = { fg = colors.fg, bg = colors.bg_alt },
+			},
+			inactive = {
+				a = { fg = colors.gray, bg = colors.bg_alt, gui = "bold" },
+				b = { fg = colors.gray, bg = colors.bg_alt },
+				c = { fg = colors.gray, bg = colors.bg_alt },
 			},
 		}
 
 		local mode = {
 			"mode",
 			fmt = function(str)
-				-- return ' '
-				-- displays only the first character of the mode
 				return " " .. str
 			end,
 		}
@@ -51,8 +54,7 @@ return {
 		local diff = {
 			"diff",
 			colored = true,
-			symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-			-- cond = hide_in_width,
+			symbols = { added = " ", modified = " ", removed = " " },
 		}
 
 		local filename = {
@@ -61,12 +63,16 @@ return {
 			path = 0,
 		}
 
-		local branch = { "branch", icon = { "", color = { fg = "#A6D4DE" } }, "|" }
+		local branch = {
+			"branch",
+			icon = { "", color = { fg = colors.blue } },
+			separator = "|",
+		}
 
 		lualine.setup({
 			icons_enabled = true,
 			options = {
-				theme = my_lualine_theme,
+				theme = gruvbox_theme,
 				component_separators = { left = "|", right = "|" },
 				section_separators = { left = "|", right = "" },
 			},
@@ -76,37 +82,13 @@ return {
 				lualine_c = { diff, filename },
 				lualine_x = {
 					{
-						-- require("noice").api.statusline.mode.get,
-						-- cond = require("noice").api.statusline.mode.has,
 						lazy_status.updates,
 						cond = lazy_status.has_updates,
-						color = { fg = "#ff9e64" },
+						color = { fg = colors.yellow },
 					},
-					-- { "encoding",},
-					-- { "fileformat" },
 					{ "filetype" },
 				},
 			},
 		})
 	end,
 }
-
--- SOlarzied Osaka Color
--- local colors = {
--- 	base03 = "#002b36",
--- 	base02 = "#073642",
--- 	base01 = "#586e75",
--- 	base00 = "#657b83",
--- 	base0 = "#839496",
--- 	base1 = "#93a1a1",
--- 	base2 = "#eee8d5",
--- 	base3 = "#fdf6e3",
--- 	yellow = "#b58900",
--- 	orange = "#cb4b16",
--- 	red = "#dc322f",
--- 	magenta = "#d33682",
--- 	violet = "#6c71c4",
--- 	blue = "#268bd2",
--- 	cyan = "#2aa198",
--- 	green = "#859900",
--- }

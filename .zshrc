@@ -106,7 +106,7 @@ export VISUAL=nvim
 export PATH="$HOME/go/bin:$PATH"
 
 # History search
-bindkey '^R' history-incremental-search-backward
+# bindkey '^R' history-incremental-search-backward
 
 # Erase in Insert Mode
 bindkey -M viins '^?' backward-delete-char
@@ -125,3 +125,4 @@ fi
 if command -v tmux &> /dev/null; then
   [ -z "$TMUX" ] && exec tmux
 fi
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
