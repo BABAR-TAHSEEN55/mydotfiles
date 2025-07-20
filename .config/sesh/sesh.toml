@@ -26,6 +26,12 @@ path = "~/.config/fastfetch"
 startup_command = "fastfetch"
 preview_command = "fastfetch"
 
+[[session]]
+name = "Rules"
+path = "~/Documents/MainObs/00 - Life/Aim/"
+startup_command = "nvim"
+
+
 # [[session]]
 # name = "wallpaper"
 # path = "~/.config/wezterm/wallpapers"
