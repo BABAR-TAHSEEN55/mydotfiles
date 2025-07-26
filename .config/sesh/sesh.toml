@@ -40,7 +40,7 @@ startup_command = "nvim"
 
 [[session]]
 name = "Brain 🧠"
-path = "~/Documents/MainObs/"
+path = "~/Documents/SuhoVault/"
 # startup_command = "nvim"
 startup_command = "nvim -c \"lua require('snacks').picker.files()\""
 # [[session]]
